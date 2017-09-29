@@ -17,6 +17,7 @@ export class GnomeListComponent implements OnInit {
   public promiseGnomeList: Promise<GnomeModel[]>;
   public gnomeList: Array<GnomeModel> = [];
   public gnomeTotal: number = 0;
+  public profession: String = '';
   public errorMessage: String = '';
 
   constructor(
@@ -42,6 +43,7 @@ export class GnomeListComponent implements OnInit {
       data => {
         this.gnomeList = data['Brastlewark'];
         this.gnomeTotal = data['Brastlewark'].length;
+        this.profession = 'All Profession';
       },
       error =>  this.errorMessage = <any>error
     );
@@ -49,6 +51,7 @@ export class GnomeListComponent implements OnInit {
 
   public getListByProfession(prof: string){
     const normalize = this.normalize.transform;
+    let viewProf = prof;
     prof = normalize(prof);
     return this.getDataService.GetAllData().then(
       data => {
@@ -62,6 +65,7 @@ export class GnomeListComponent implements OnInit {
         }
         this.gnomeList = results;
         this.gnomeTotal = results.length;
+        this.profession = viewProf;
         this.router.navigate(['/list', prof ]);
       }, error => {
         console.log(error);
