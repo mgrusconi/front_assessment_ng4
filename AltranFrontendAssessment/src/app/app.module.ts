@@ -19,6 +19,9 @@ import { GnomeListComponent } from './gnome-list/gnome-list.component';
 //Services
 import { GetDataService } from './services/get-data.service';
 import { GnomeProfileComponent } from './gnome-profile/gnome-profile.component';
+import { GnomeNameComponent } from './gnome-name/gnome-name.component';
+import { GnomeProfessionsComponent } from './gnome-professions/gnome-professions.component';
+import { GnomeDataComponent } from './gnome-data/gnome-data.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { GnomeProfileComponent } from './gnome-profile/gnome-profile.component';
     InitComponent,
     HeaderComponent,
     GnomeListComponent,
-    GnomeProfileComponent
+    GnomeProfileComponent,
+    GnomeNameComponent,
+    GnomeProfessionsComponent,
+    GnomeDataComponent
   ],
   imports: [
     BrowserModule,

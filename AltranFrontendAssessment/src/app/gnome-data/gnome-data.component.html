@@ -1,0 +1,36 @@
+<div>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <strong>Professions</strong>
+      <span class="pull-right">
+        <app-gnome-professions [professions]="gnome.professions"></app-gnome-professions>
+      </span>
+    </li>
+    <li class="list-group-item">
+      <strong>Height</strong>
+      <span class="pull-right height">{{gnome.height}} cm</span>
+    </li>
+    <li class="list-group-item">
+      <strong>Weight</strong>
+      <span class="pull-right weight">{{gnome.weight}} g</span>
+    </li>
+    <li class="list-group-item">
+      <strong>Age</strong>
+      <span class="pull-right age">{{gnome.age}}</span>
+    </li>
+    <li class="list-group-item">
+      <strong>Hair Color</strong>
+      <span class="pull-right hair_color">{{gnome.hair_color}}</span>
+    </li>
+    <li class="list-group-item">
+      <strong>Friends</strong>
+      <ul>
+        <li *ngFor="let friend of gnome.friends">
+          <a class="friend" (click)="getByName(friend)">
+              {{friend}}
+            </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

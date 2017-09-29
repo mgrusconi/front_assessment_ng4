@@ -1,24 +1,5 @@
-
-.title-profile{
-  text-align: center;
-}
-
 .gnome-panel {
   height: 395px;
-}
-
-.gnome-panel h1 {
-  margin: 0;
-  color: #fff;
-  font-size: 18px;
-}
-
-.gnome-panel h1 > small {
-  color: #ccc;
-}
-
-.link-title{
-  font-size: 18px;
 }
 
 .gnome-panel img {
@@ -32,12 +13,6 @@
   max-height: 200px;
 }
 
-.avatar{
-    max-width: 382px;
-    max-height: 255px;
-    margin-top: 40px;
-}
-
 .gnome-panel .panel-body {
   position: relative;
   height: 250px;
@@ -45,9 +20,4 @@
 
 .gnome-panel .professions-container {
   margin-top: 5px;
-}
-.gnome-panel .professions {
-    margin: 2px;
-  background-color: #f08030;
-  border: solid 1px #9c531f;
 }

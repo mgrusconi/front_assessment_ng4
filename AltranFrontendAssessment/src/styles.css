@@ -8332,6 +8332,32 @@ a.list-group-item-danger.active:focus {
     border-radius: 0
 }
 
+.app-container{
+  padding: 0 20px;
+}
+
 .popover-title {
     border: none
+}
+
+.title-profile{
+  text-align: center;
+}
+
+.gnome-panel {
+  height: 395px;
+}
+
+.gnome-panel h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+}
+
+.gnome-panel h1 > small {
+  color: #ccc;
+}
+
+.link-title{
+  font-size: 18px;
 }

@@ -4,6 +4,8 @@ import { GnomeModel } from "../models/gnomeModel";
 import { NormalizePipe } from '../pipes/normalize.pipe';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
+import emptyGnomeModel from "../empty_models/gnomeModel";
+
 @Component({
   selector: 'app-gnome-list',
   templateUrl: './gnome-list.component.html',
@@ -13,26 +15,25 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class GnomeListComponent implements OnInit {
 
   public promiseGnomeList: Promise<GnomeModel[]>;
-  public gnomeList: Array<GnomeModel>;
-  public gnomeTotal: number;
-  public errorMessage: String;
+  public gnomeList: Array<GnomeModel> = [];
+  public gnomeTotal: number = 0;
+  public errorMessage: String = '';
 
   constructor(
     private getDataService: GetDataService, 
     private normalize: NormalizePipe,
     private route: ActivatedRoute,
     private router: Router
-    ) { }
+    ) { 
+      if(this.route.snapshot.params['prof']){
+        this.getListByProfession(this.route.snapshot.params['prof']);
+      }else{
+        this.LoadData();
+      }
+    }
 
   ngOnInit(): void {
-    console.log(this.route)
-    console.log(this.route.snapshot)
-    console.log(this.route.snapshot.params)
-    if(this.route.snapshot.params['prof']){
-      this.getListByProfession(this.route.snapshot.params['prof']);
-    }else{
-      this.LoadData();
-    }
+
   }
 
   private LoadData(){

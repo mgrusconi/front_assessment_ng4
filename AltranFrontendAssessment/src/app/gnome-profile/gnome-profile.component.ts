@@ -4,6 +4,8 @@ import { GnomeModel } from "../models/gnomeModel";
 import { NormalizePipe } from '../pipes/normalize.pipe';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
+import emptyGnomeModel from "../empty_models/gnomeModel";
+
 @Component({
   selector: 'app-gnome-profile',
   templateUrl: './gnome-profile.component.html',
@@ -11,18 +13,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class GnomeProfileComponent implements OnInit {
 
-  public gnome: GnomeModel = {
-    id: 0,
-    name: '',
-    thumbnail: '',
-    age: 0,
-    weight: 0,
-    height: 0,
-    hair_color: '',
-    professions: [],
-    friends: []
-  
-};
+  public gnome: GnomeModel = emptyGnomeModel;
 
   constructor(
     private getDataService: GetDataService, 

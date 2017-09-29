@@ -1,8 +1,10 @@
 import { NormalizePipe } from './normalize.pipe';
 
 describe('NormalizePipe', () => {
-  it('create an instance', () => {
+  it('Testing Behavior', () => {
     const pipe = new NormalizePipe();
-    expect(pipe).toBeTruthy();
+    let str = 'Test String';
+    let str2 = 'teststring';
+    expect(pipe.transform(str)).toEqual(str2);
   });
 });
