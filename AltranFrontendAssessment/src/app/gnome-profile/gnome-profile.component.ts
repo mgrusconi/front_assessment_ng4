@@ -23,7 +23,16 @@ export class GnomeProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getById(this.route.snapshot.params['id']);
+    if(this.route.snapshot.params['id']){
+      console.log(this.route.snapshot.params);
+      this.getById(this.route.snapshot.params['id']);
+    }else if(this.route.snapshot.params['name']){
+      console.log(this.route.snapshot.params);
+      this.getByName(this.route.snapshot.params['name']);
+    }else{
+      console.log('kb')
+    }
+    
   }
 
   private getById(id: number){
@@ -34,7 +43,7 @@ export class GnomeProfileComponent implements OnInit {
       });
 
       if (results.length <= 0) {
-        window.location.href = '/#/not_found'
+        window.location.href = '/not_found'
       }
       this.gnome = results[0];
       this.router.navigate(['/gnome/id/', id ]);
@@ -53,10 +62,10 @@ export class GnomeProfileComponent implements OnInit {
         });
 
         if (results.length <= 0) {
-          window.location.href = '/#/not_found'
+          window.location.href = '/not_found'
         }
         this.gnome = results[0];
-        this.router.navigate(['/gnome/id/', this.gnome.id ]);
+        this.router.navigate(['/gnome/name/', normalize(this.gnome.name) ]);
       }, error => {
         console.log(error);
       });

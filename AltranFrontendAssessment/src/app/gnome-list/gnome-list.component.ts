@@ -58,7 +58,7 @@ export class GnomeListComponent implements OnInit {
           });
         });
         if (results.length <= 0) {
-          window.location.href = '/#/not_found'
+          window.location.href = '/not_found'
         }
         this.gnomeList = results;
         this.gnomeTotal = results.length;

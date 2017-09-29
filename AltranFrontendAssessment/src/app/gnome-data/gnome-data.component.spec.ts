@@ -41,7 +41,7 @@ describe('GnomeDataComponent', () => {
   it('should render Gnome ages', () => {
     gnomeDataComponent.gnome = gnomeMock;
     fixture.detectChanges();
-    expect(+(element.querySelector('span.age').innerText)).toEqual(351);
+    expect(element.querySelector('span.age').innerText).toEqual('351 year old');
   });
 
   it('should render Gnome Hair Color', () => {

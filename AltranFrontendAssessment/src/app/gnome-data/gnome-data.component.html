@@ -8,15 +8,15 @@
     </li>
     <li class="list-group-item">
       <strong>Height</strong>
-      <span class="pull-right height">{{gnome.height}} cm</span>
+      <span class="pull-right height">{{gnome.height | number:'1.2-2'}} cm</span>
     </li>
     <li class="list-group-item">
       <strong>Weight</strong>
-      <span class="pull-right weight">{{gnome.weight}} g</span>
+      <span class="pull-right weight">{{gnome.weight| number:'1.2-2'}} g</span>
     </li>
     <li class="list-group-item">
       <strong>Age</strong>
-      <span class="pull-right age">{{gnome.age}}</span>
+      <span class="pull-right age">{{gnome.age}} year old</span>
     </li>
     <li class="list-group-item">
       <strong>Hair Color</strong>
@@ -26,7 +26,7 @@
       <strong>Friends</strong>
       <ul>
         <li *ngFor="let friend of gnome.friends">
-          <a class="friend" (click)="getByName(friend)">
+          <a class="friend" href="gnome/name/{{friend}}">
               {{friend}}
             </a>
         </li>
